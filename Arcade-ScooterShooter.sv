@@ -299,7 +299,7 @@ hps_io #(.CONF_STR(CONF_STR)) hps_io
 	.ioctl_din(ioctl_din),
 	.ioctl_index(ioctl_index),
 
-	.joy_raw(joydb_1[5:0] | joydb_2[5:0]),
+	.joy_raw(joydb_1[5:0]),
 	.joystick_0(joystick_0_USB),
 	.joystick_1(joystick_1_USB),
 	.ps2_key(ps2_key)
