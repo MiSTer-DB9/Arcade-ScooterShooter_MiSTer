@@ -259,8 +259,8 @@ joydb joydb (
 
 assign USER_OUT = USER_OUT_DRIVE;
 // [MiSTer-DB9 END]
-wire [15:0]   joystick_0 = joydb_1ena ? (OSD_STATUS ? 16'b0 : {joydb_1[11],joydb_1[10],joydb_1[4:0]}) : joystick_0_USB;
-wire [15:0]   joystick_1 = joydb_2ena ? (OSD_STATUS ? 16'b0 : {joydb_2[11],joydb_2[10],joydb_2[4:0]}) : joydb_1ena ? joystick_0_USB : joystick_1_USB;
+wire [15:0]   joystick_0 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1_mapped[6:0]) : joystick_0_USB;
+wire [15:0]   joystick_1 = joydb_2ena ? (OSD_STATUS ? 16'b0 : joydb_2_mapped[6:0]) : joydb_1ena ? joystick_0_USB : joystick_1_USB;
 
 assign {SDRAM_DQ, SDRAM_A, SDRAM_BA, SDRAM_CLK, SDRAM_CKE, SDRAM_DQML, SDRAM_DQMH, SDRAM_nWE, SDRAM_nCAS, SDRAM_nRAS, SDRAM_nCS} = 'Z;
 assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
